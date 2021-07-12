@@ -17,13 +17,14 @@
 package uk.gov.hmrc.accessibilitystatementfrontend
 
 import io.circe.{Decoder, Encoder}
+import uk.gov.hmrc.HelloWorld
 
 import java.net.URLEncoder
 import java.time.LocalDate
 import java.util.{Date, GregorianCalendar}
 import scala.util.Try
 
-package object models {
+package object models extends HelloWorld {
   private val format = new java.text.SimpleDateFormat("yyyy-MM-dd")
 
   implicit val dateDecoder: Decoder[Date] = Decoder.decodeString.emapTry { (str: String) =>
@@ -32,6 +33,8 @@ package object models {
 
   implicit val dateEncoder: Encoder[Date] =
     Encoder.encodeString.contramap[Date](format.format)
+
+  def doHello(): String = sayHello()
 
   def dateToLocalDate(date: Date): LocalDate = {
     val calendar = new GregorianCalendar()

@@ -17,12 +17,19 @@
 package unit.models
 
 import org.scalatest.{Matchers, WordSpec}
-import uk.gov.hmrc.accessibilitystatementfrontend.models.{dateToLocalDate, reportAccessibilityProblemLink}
+import uk.gov.hmrc.accessibilitystatementfrontend.models.{dateToLocalDate, doHello, reportAccessibilityProblemLink}
 
 import java.time.LocalDate
 import java.util.GregorianCalendar
 
 class PackageSpec extends WordSpec with Matchers {
+
+  "Calling the doHello" should {
+    "return the expected string" in {
+      doHello() shouldBe "Hello World"
+    }
+  }
+
 
   "Given a Date object, calling the toLocalDate helper" should {
     "return the expected LocalDate" in {

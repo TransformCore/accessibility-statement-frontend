@@ -12,7 +12,8 @@ object AppDependencies {
     "io.circe"    %% "circe-core"                 % circeVersion,
     "io.circe"    %% "circe-generic"              % circeVersion,
     "io.circe"    %% "circe-parser"               % circeVersion,
-    "io.circe"    %% "circe-yaml"                 % circeVersion
+    "io.circe"    %% "circe-yaml"                 % circeVersion,
+    "uk.gov.hmrc"            %% "scalatest-accessibility-linter"       % "0.4.0-SNAPSHOT"
   )
 
   val test = Seq(
